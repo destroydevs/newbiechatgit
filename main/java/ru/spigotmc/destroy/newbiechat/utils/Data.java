@@ -38,6 +38,10 @@ public class Data {
         return config.getBoolean(p.getUniqueId()+".blocked");
     }
 
+    public static boolean firstJoin(Player p) {
+        return players().contains(p.getUniqueId().toString());
+    }
+
     public static int getTime(Player p) {
         return config.getInt(p.getUniqueId()+".time");
     }

@@ -21,7 +21,7 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
 
-        if(!Data.isBlocked(player)) {
+        if(!Data.firstJoin(player)) {
             Data.setBlock(player, main.getConfig().getInt("cooldown"));
             for(String s : main.getConfig().getStringList("first-join-actions")) {
                 Utils.startWithCheck(player, s);
